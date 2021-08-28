@@ -1,0 +1,41 @@
+{
+  "title": "MindX - Clean Blog",
+  "name": "MindX-clean-blog",
+  "version": "5.0.8",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "description": "Clean Blog is a Medium inspired blog theme for Bootstrap.",
+  "keywords": [
+    "css",
+    "sass",
+    "html",
+    "responsive",
+    "theme",
+    "template"
+  ],
+  "homepage": "https://startbootstrap.com/template-overviews/clean-blog",
+  "bugs": {
+    "url": "https://github.com/BlackrockDigital/startbootstrap-clean-blog/issues",
+    "email": "feedback@startbootstrap.com"
+  },
+  "license": "MIT",
+  "author": "Start Bootstrap",
+  "contributors": [
+    "David Miller (http://davidmiller.io/)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlackrockDigital/startbootstrap-clean-blog.git"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "5.10.2",
+    "bootstrap": "4.3.1",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "jquery": "3.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
