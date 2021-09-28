@@ -1,0 +1,51 @@
+Các kiến thức ôn tập
+
+================Javascript================
+
+1. Các datatype trong javascript
+2. OOP trong javascript (lập trình hướng đối tượng)
+
+- 4 tính chất của lập trình OOP (học thuộc, hiểu)
+- Triển khai các tính chất cảu OOP trong javascript như thế nào
+	1. Object
+	2. Prototype
+	3. ES6
+	
+3. Lập trinh đồng bộ và bất đồng bộ
+	1. Callback
+	2. Promise
+	3. Async/await
+	
+	
+4. Các kiến thức khác
+	1. Scope 
+	2. Phân biệt var, let, const
+	3. Clousure
+	4. Hoisting
+	5. HOC trong javascript
+	6. Module system
+
+5. NPM, WEBPACK, GULP
+
+================Quản lý source code================
+
+1. Biết sử dụng git
+2. Hiểu về git flow (luồng làm việc)
+3. Các nguồn quản lý source code (github, gitlab, bitbucket...)
+
+================Front-end================
+
+- Biết 1 trong 3 thằng
+1. React
+2. Angular (version 2+)
+3. Vuejs
+
+- React
+
++ Virtual DOM
++ Props và State, phân biệt được state và props
++ Lifecycle trong react
++ Component (functional component và class component)
++ Hook (các hook thường xuyên sử dụng) - Giúp functional component trở nên mạnh mẽ hơn
++ Redux
++ React-router
