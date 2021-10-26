@@ -24,10 +24,10 @@
 
 
 #### Chia nhóm
-- Nhóm 1 (Diễn đàn hỏi đáp): Bình, Minh Quân
+- Nhóm 1 (Diễn đàn hỏi đáp): Bình, Minh Quân, Cừ
 - Nhóm 2 (Web thương mại điện tử): An, Hải
 - Nhóm 3 (Chia sẻ phim hoặc game): Hiếu, Sơn, Minh
-- Nhóm 4 (Ứng dụng blog): Dũng, Phú, Dũng
+- Nhóm 4 (Ứng dụng blog): Dũng, Phú, Thụ
 
 #### Sản phẩm
   - Client (code)
