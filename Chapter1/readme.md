@@ -410,7 +410,7 @@ console.log(odd);
 ```
 
 ---
-### 2. Default parameter, destructuring, spread operator
+### 2. Default parameter, destructuring, spread operator, rest parameter
 
 - Default parameter đã có từ lâu trong C#, giờ JavaScript cũng đã có. Nhờ default parameter, ta có thể xác định giá trị mặc định của tham số truyền vào
 
@@ -429,6 +429,9 @@ multiply(5); // 5
 ```
 
 - Destructuring cũng là một tính năng khá hay, nó cho phép ta “phân rã” các phần tử trong 1 array hoặc 1 object
+
++ Destructuring (phá vỡ cấu trúc) cho phép chúng ta dễ dàng sử dụng các giá trị phần tử của Array hoặc Object.
++ Destructuring rất hữu dụng khi làm việc với function có đối số.
 
 ```angular2html
 // Với array
@@ -455,7 +458,85 @@ var {firstName : fn, lastName : ln} = obj; //fn: Hoang, ln: Pham
 
 ```
 
+- Spread syntax
+
++ Cú pháp spread cho phép một phép lặp lại các phần tử của mãng (array) hay đối tượng (object).
++ Cú pháp spread được thể hiện dưới dạng dấu ...
+
+------- với array -------
+```angular2html
+const oldArray = [1, 2, 3];
+const newArray = [oldArray, 4, 5];
+console.log(newArray); /* ouput: (3) [Array(3), 4, 5] */
+
+-> Với cách viết như trên, sẽ tạo một Array bên trong một Array mới.
+```
+
+```angular2html
+const oldArray = [1, 2, 3];
+const newArray = [...oldArray, 4, 5];
+console.log(newArray); /* ouput: [1, 2, 3, 4, 5] */
+```
+
 ---
+------- với object -------
+
+```angular2html
+- cách cũ
+const oldObject = {
+  name: 'Dương Minh Trí'
+};
+
+const newObject = {
+  oldObject,
+  age: 4
+};
+
+console.log(newObject); /* ouput: {oldObject: {…}, age: 4} */
+```
+
+```angular2html
+- cách mới
+const oldObject = {
+name: 'Dương Minh Trí'
+};
+
+const newObject = {
+...oldObject,
+age: 4
+};
+
+console.log(newObject); /* ouput: {name: "Dương Minh Trí", age: 4} */
+```
+
+- rest parameter
+
+- Tham số "còn lại" (rest parameters), là tham số đại diện cho những tham số không được khai báo.
+- Khi sử dụng khai báo đại diện bên trong một function thì khi gọi function sẽ không giới hạn giá trị truyền vào.
+- Đại diện này được ký hiệu bằng khai báo ...name (cẩn thận coi chừng nhầm lẫn với spread syntax).
+
+```angular2html
+function number(num1, num2, ...numOther){
+  console.log("x:", num1); 
+  console.log("y:", num2);
+  console.log("Other number:", numOther);
+}
+number("one", "two", "three", "four", "five", "six");
+/* ouput: 
+x: one
+y: two
+Other number: (4) ["three", "four", "five", "six"] */
+```
+
+```angular2html
+function number(...numOther){
+  console.log(number.length);
+}
+number() /* ouput: 0 */
+number(7) /* ouput: 1 */
+number(2, 4, 7) /* ouput: 3 */
+```
+
 ### 3. Cải tiến syntax class và object
 
 - Trong ES6, class có hỗ trợ constructor, get/set, việc kế thừa cũng rất dễ thực hiện bằng từ khóa extends.
@@ -504,7 +585,7 @@ var obj = {
 ### 4. Iterator
 
 - Ngày xưa, để duyệt qua từng phần tử trong một mảng, ta phải sử dụng hàm for, chạy index từ 0 tới cuối mảng. 
-- Sau đó sử dụng hàm hàm forEach (cú pháp hơi lạ)
+- Sau đó sử dụng hàm forEach (cú pháp hơi lạ)
 - Trong ES6, ta đã có thêm for… of để duyệt từng phần tử trong một mảng
 
 ```angular2html
@@ -537,3 +618,7 @@ console.log("Hello " + name + " how are you " + time + " ?");
 // Dùng string interpolation, để ý dấu `
 console.log(`Hello ${name}, how are you ${time}?`);
 ```
+
+### 6. Export và import
+
+- https://hocwebchuan.com/tutorial/es6/es6_export_import.php
