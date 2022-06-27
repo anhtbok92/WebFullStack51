@@ -13,31 +13,36 @@ cũng hứng chịu nhiều "gạch đá"
 - Tóm lại : Học javascript làm được nhiều mảng khác nhau trong lĩnh vực lập trình.
 
 ---
-# Javascript data types
+# JavaScript Data Types
 
-- Trong JS có 6 kiểu dữ liệu cơ bản: Number, Boolean, String, Null, Undefined, Object
-- 5 kiểu đầu còn được gọi là <b>primitive types (kiểu nguyên thủy)</b>
-- Kiểu object là <b>non-primitive</b>
-- Lưu ý : <b>Array</b> và <b>Function</b> được coi là subtype của <b>Object</b> (nhóm con), chứ nó không được coi như type của JavaScript.
+- Trong JS có 8 kiểu dữ liệu trong javascript
+
+![img_2.png](img_2.png)
+
+- Tất cả data types ngoại trừ `Object` gọi là <b>primitive types (kiểu nguyên thủy)</b>
+- Kiểu Object là <b>non-primitive</b>
+- Lưu ý : <b>Array</b> và <b>Function</b> được coi là subtype của <b>Object</b> (nhóm con), và không được coi như type của JavaScript.
 
 ---
-## A. undefined, NaN, null
+## A. undefined, NaN <not a number>, null
 
 ### 1. undefined
 - <b>undefined</b>: một variable sẽ có giá trị là undefined khi chúng không có giá trị nào hoặc chưa được assign một giá trị nào.
 - Ví dụ: undefined.js
 
 ```angular2html
-var a;
+let a;
 if (a === undefined) {
     console.log('a is undefined. Define it now!'); //a is undefined. Define it now!
 }
-var obj = { name: 'james', age: 18 };
+let obj = { name: 'james', age: 18 };
 console.log(obj.sex); // ? Kết quả in ra là gì ?
 
-var arr = [1, 3, 5];
+let arr = [1, 3, 5];
 console.log(arr[4]); // ? Kết quả in ra là gì ?
 
+let name = undefined;
+console.log(name); // undefined
 ```
 
 ---
@@ -48,7 +53,7 @@ Chúng ta khai báo một biến var a; chẳng hạn, tại thời điểm này
 - Câu hỏi 1 ?
 
 ```angular2html
-typeof undefined ----> ? // Kết quả in ra là gì ?
+typeof undefined ----> ? // Kết quả in ra là gì ? // 'undefined'
 ```
 
 - <b>Kết luận</b> : có 3 trường hợp gây ra undefined
@@ -62,36 +67,49 @@ typeof undefined ----> ? // Kết quả in ra là gì ?
 - Câu hỏi 2 ?
 
 ```angular2html
-var whatEver = document.getElementById('what-ever');
+const  whatEver = document.getElementById('what-ever');
 console.log(whatEver); // kết quả in ra gì ?
+
+hoặc
+const number = null;
 ```
 
-- <i>Giải thích: 
-    + Có 3 trường hợp gây ra lỗi undefined
+- <i>Giải thích:
     + Chỉ có 1 trường hợp gây ra null là : Khi ta muốn trả về 1 object nhưng lại không có gì.
     + Ví dụ: Khi tôi muốn get 1 element có id là #what-ever bằng hàm document.getElementById
     tuy nhiên không có 1 element nào như vậy => kết quả trả về NULL </i>
+    + null là một giá trị đặc biệt đại diện cho giá trị empty hoặc unknown value.
+    + Chú ý: null is not the same as NULL or Null.
   
 ---      
 - Câu hỏi số 3 ?
 
 ```angular2html
-console.log(typeof null) // kết quả in ra gì ? 
+console.log(typeof null) // kết quả in ra gì ? // 'object'
 ```
 
-- <i>Giải thích : Không thể giải thích được =)) </i>
-
 ---
+
 ### 3. NaN là Not a Number
 
 - Câu hỏi số 4 ?
 
 ```angular2html
-var a = 0/0;
-console.log(a); // Kết quả in ra là gì ?
-console.log(typeof a); // Kết quả in ra là gì ?
-console.log(a == NaN); // Kết quả in ra là gì ?
-console.log(isNaN(a)); // Kết quả in ra là gì ?
+const number1 = 3/0;
+console.log(number1); // Infinity
+
+const number2 = -3/0;
+console.log(number2); // -Infinity
+
+// strings can't be divided by numbers
+const number3 = "abc"/3;
+console.log(number3);  // NaN
+
+const a = 0/0;
+console.log(a); // Kết quả in ra là gì ? // NaN 
+console.log(typeof a); // Kết quả in ra là gì ? // number
+console.log(a == NaN); // Kết quả in ra là gì ? // false
+console.log(isNaN(a)); // Kết quả in ra là gì ? // true
 ```
 - <i>Giải thích : NaN được gán cho những variable là SỐ mà không phải SỐ. Nói cách khác, nó là số, nhưng không phải là số. typeof NaN sẽ trả về number -> nó là số. Nhưng NaN == NaN sẽ trả về false -> nó không phải số, nên không thể có chuyện nó bằng chính nó được.</i>
 - Đây là giá trị duy nhất trong lập trình nó không bằng chính nó.
@@ -162,7 +180,7 @@ Operator này sẽ chỉ compare 2 value, just it, không coercion, không conve
 - Có thể hiểu một object là một tập hợp các trường dữ liệu (property) và các hàm (method)
 
 ```angular2html
-var person = {
+const person = {
     firstName: 'Linh',
     lastName: 'Hoang Thuy',
     showName: function() {
